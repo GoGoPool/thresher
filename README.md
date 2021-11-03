@@ -1,8 +1,10 @@
-<pre style="text-align: center; display: inline-block;font-family: MonoLisa, Menlo, Monaco, 'Courier New',monospace; font-size: 14px !important; line-height: 16px !important; letter-spacing: 0px;">
+<div align="center">
+ <pre>
  _______ _     _  ______ _______ _______ _     _ _______  ______
     |    |_____| |_____/ |______ |______ |_____| |______ |_____/
     |    |     | |    \_ |______ ______| |     | |______ |    \_
 </pre>
+</div>
 <br>
 <h2 align="center">🚧 EXPERIMENTAL! NOT FOR PRODUCTION USE! 🚧<h2>
 
