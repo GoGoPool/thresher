@@ -12,6 +12,8 @@
 
 `Thresher Wallet is a multisig wallet for Avalanche, with built-in chat, that uses Threshold Signatures to allow any number of signers to collaboratively manage an Avalanche X-chain wallet.`
 
+![Thresher](docs/thresher.jpg)
+
 The Avalanche blockchain is actually 3 chains, the P, X, and C chains. The P and X chains are UTXO chains built using Secp256K cryptography. Avalanche has built-in support for m-of-n multisig transactions, but that comes at a cost. Privacy is compromised, as anyone can see that a particular UTXO requires m-of-n sigs, and can see exactly which addresses signed a transaction, and for a large number of signers, the transaction size can get large. In the past few years a lot of progress has been made on Threshold Signature Schemes (TSS), which solve these problems.
 
 A TSS UTXO looks exactly like any other single sig UTXO on the blockchain. No one can know it requires `m-of-n` signers, and once a transaction is signed by `m` signers, it is indistinguishable from a regular single sig transaction. This greatly improves privacy.
