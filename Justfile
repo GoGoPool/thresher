@@ -36,11 +36,11 @@ initusers:
 	bin/thresher init avalanche fuji DAO-Treasury cam X-fuji13avtfecrzkhxrd8mxqcd0ehctsvqh99y6xjnr2
 
 alice:
-	bin/thresher --config DAO-raging-bull-alice.json --log alice.log wallet
+	bin/thresher --config DAO-Treasury-alice.json --log alice.log wallet
 
 bob:
-	bin/thresher --config DAO-raging-bull-bob.json --log bob.log wallet
+	bin/thresher --config DAO-Treasury-bob.json --log bob.log wallet
 
 cam: 
-	bin/thresher --config DAO-raging-bull-cam.json --log cam.log wallet
+	bin/thresher --config DAO-Treasury-cam.json --log cam.log wallet
 

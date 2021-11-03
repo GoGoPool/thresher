@@ -562,7 +562,7 @@ func (ui *UI) startEventHandler() {
 						othernicks = append(othernicks, s.Nick)
 					}
 				}
-				confirmMsg := fmt.Sprintf("%s wants to generate a %v-of-%v wallet with other signers %s", msg.SenderName, msg.StartKeygen.Threshold+1, len(msg.StartKeygen.Signers)+1, strings.Join(othernicks, ","))
+				confirmMsg := fmt.Sprintf("%s wants to generate a %v-of-%v wallet with other signers %s", msg.SenderName, msg.StartKeygen.Threshold+1, len(msg.StartKeygen.Signers), strings.Join(othernicks, ","))
 				ui.confirm(confirmMsg, "Generate!", "main", func() {
 					go ui.runProtocolKeygen(msg.StartKeygen.Name, msg.StartKeygen.Threshold, msg.StartKeygen.Signers)
 				})
@@ -586,7 +586,9 @@ func (ui *UI) startEventHandler() {
 					}
 				}
 				
-				confirmMsg := fmt.Sprintf("%s wants %s to send %v AVAX to address %s", msg.SenderName, strings.Join(othernicks, ","), msg.StartSendTx.Amount, msg.StartSendTx.DestAddr)
+				// TODO is division the best way to do this?
+				amtDisplay := float64(msg.StartSendTx.Amount) / float64(units.Avax)
+				confirmMsg := fmt.Sprintf("%s wants %s to send %v AVAX to address %s", msg.SenderName, strings.Join(othernicks, ","), amtDisplay, msg.StartSendTx.DestAddr)
 				if msg.StartSendTx.Memo != "" {
 					confirmMsg = fmt.Sprintf("%s with memo %s", confirmMsg, msg.StartSendTx.Memo)
 				}
