@@ -106,7 +106,7 @@ func NewTerminalApp(blockchain string, roomname string, nick string, cmdchan cha
 		SetTitleColor(tcell.ColorWhite)
 
 	helpbox := tview.NewTextView().SetDynamicColors(true)
-	fmt.Fprintf(helpbox, "  [grey]Available Commands:[-] [yellow]F2[-] [grey]Generate new multisig wallet[-]  [yellow]F3[-]  [grey]Send Transaction[-]")
+	fmt.Fprintf(helpbox, "  [green]Available Commands:[-] [yellow]F2[-] [green]Generate new multisig wallet[-]  [yellow]F3[-]  [green]Send Transaction[-]")
 
 	input := tview.NewInputField().
 		SetLabel(nick + " > ").
@@ -674,7 +674,7 @@ func (ui *UI) displaySelfMessage(msg string) {
 
 func (ui *UI) handleLogMessage(cl chatlog) {
 	// Write to UI
-	fmt.Fprintf(ui.messageBox, "[grey]%s[-]\n", cl.msg)
+	fmt.Fprintf(ui.messageBox, "[green]%s[-]\n", cl.msg)
 	log.Printf("%s: %s", cl.level, cl.msg)
 }
 
@@ -687,7 +687,7 @@ func (ui *UI) syncParticipants() {
 	ui.participantBox.Unlock()
 
 	for _, p := range participants {
-		fmt.Fprintf(ui.participantBox, "[blue]<%s>[-]\n[grey]%s[-]\n\n", p.Nick, p.Address)
+		fmt.Fprintf(ui.participantBox, "[blue]<%s>[-]\n[green]%s[-]\n\n", p.Nick, p.Address)
 	}
 }
 
@@ -705,7 +705,7 @@ func (ui *UI) syncWallets() {
 		bal := w.BalanceForDisplay(w.Config.AssetID)
 		fmt.Fprintf(
 			ui.keyBox, 
-			"[blue]<%s>[-]\n[yellow]%s[-]\n[white]Balance:[-] [green]%s[-] [white]AVAX[-]\n[grey]Signers: %s (%d of %d)\n", 
+			"[blue]<%s>[-]\n[yellow]%s[-]\n[white]Balance:[-] [green]%s[-] [white]AVAX[-]\n[green]Signers: %s (%d of %d)\n", 
 			w.Name, w.Address, bal, signers, m, n)
 	}
 }
