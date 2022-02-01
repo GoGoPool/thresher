@@ -222,6 +222,7 @@ func (w *Wallet) GetUnwrappedKeyData() mpsconfig.Config {
 }
 
 // From the MSP key data, convert to an Avalanche public key
+// THIS IS WHERE THE COOL STUFF HAPPENS
 func (w *Wallet) PublicKeyAvm() avacrypto.PublicKey {
 	kd := w.GetUnwrappedKeyData()
 	ppb, err := kd.PublicPoint().MarshalBinary()
